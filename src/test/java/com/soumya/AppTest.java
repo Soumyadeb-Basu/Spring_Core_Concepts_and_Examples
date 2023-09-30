@@ -1,4 +1,4 @@
-package org.soumya;
+package com.soumya;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

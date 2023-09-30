@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <bean name="emp1" class="com.soumya.beans.Employee">
+
+        <property name="name" value="Tarun"/>
+        <property name="phoneNumbers">
+            <list>
+                <value>234678</value>
+                <value>326753</value>
+                <value>789214</value>
+            </list>
+        </property>
+        <property name="addresses">
+            <set>
+                <value>12 Hampton st.</value>
+                <value>North Carolina</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="java" value="Compiled"/>
+                <entry key="python" value="Interpreted"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

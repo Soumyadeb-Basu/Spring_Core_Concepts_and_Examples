@@ -1,4 +1,4 @@
-package org.soumya.beans;
+package com.soumya.beans;
 
 public class Student {
 

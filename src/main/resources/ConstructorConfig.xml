@@ -1,0 +1,20 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <bean class="com.soumya.beans.Address" name="address">
+        <constructor-arg value="700084" type="long"/>
+        <constructor-arg value="12 Peterton Street" type="String"/>
+    </bean>
+
+    <bean class="com.soumya.beans.Person" name="person1">
+        <constructor-arg value="2" type="int"/>
+        <constructor-arg value="Tyson" type="String"/>
+        <constructor-arg ref="address"/>
+    </bean>
+
+</beans>

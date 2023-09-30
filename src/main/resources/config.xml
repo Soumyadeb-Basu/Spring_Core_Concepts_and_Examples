@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
 <!-- Normal setter injection -->
-    <bean class="org.soumya.beans.Student" name="student1">
+    <bean class="com.soumya.beans.Student" name="student1">
 
         <property name="id">
             <value>22344</value>
@@ -22,7 +22,7 @@
 
     </bean>
 
-    <bean class="org.soumya.beans.Student" name="student2">
+    <bean class="com.soumya.beans.Student" name="student2">
 
         <property name="id">
             <value>45673</value>
@@ -40,7 +40,7 @@
 
     <!-- setter injection using value as attribute-->
 
-    <bean class="org.soumya.beans.Student" name="student3">
+    <bean class="com.soumya.beans.Student" name="student3">
 
         <property name="id" value="12345" />
         <property name="name" value="Charan" />
@@ -50,6 +50,6 @@
 
     <!-- setter injection using p-schema-->
 
-    <bean class="org.soumya.beans.Student" name="student4" p:id="3456" p:name="Samar" p:address="Chennai"/>
+    <bean class="com.soumya.beans.Student" name="student4" p:id="3456" p:name="Samar" p:address="Chennai"/>
 
 </beans>
