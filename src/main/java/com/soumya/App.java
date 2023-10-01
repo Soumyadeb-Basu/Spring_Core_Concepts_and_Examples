@@ -1,5 +1,9 @@
 package com.soumya;
 
+import com.soumya.autowiring.Car;
+import com.soumya.autowiring.StudentAutowire;
+import com.soumya.beanLifecycle.Laptop;
+import com.soumya.beanLifecycle.Mobile;
 import com.soumya.beanLifecycle.Product;
 import com.soumya.beans.Employee;
 import com.soumya.beans.Person;
@@ -63,5 +67,38 @@ public class App
         System.out.println(product1);
 
         contextBeanCycle.registerShutdownHook();
+        System.out.println("-------");
+
+        //BeanLifeCycle using Interface
+        ApplicationContext contextInterface= new ClassPathXmlApplicationContext("BeanLifecycle.xml");
+
+        Laptop laptop = (Laptop) contextInterface.getBean("laptop");
+
+        System.out.println(laptop);
+
+        System.out.println("-------");
+
+        //BeanLifeCycle using annotation
+        ApplicationContext contextAnnotation= new ClassPathXmlApplicationContext("BeanLifecycle.xml");
+
+        Mobile mobile = (Mobile) contextAnnotation.getBean("mobile");
+
+        System.out.println(mobile);
+        System.out.println("-------");
+        //Autowiring via XML
+        ApplicationContext contextAutowire= new ClassPathXmlApplicationContext("AutowireConfig.xml");
+
+        Car car = (Car) contextAutowire.getBean("car");
+
+        System.out.println(car);
+
+        Car car2 = (Car) contextAutowire.getBean("car2");
+
+        System.out.println(car2);
+
+        StudentAutowire student = (StudentAutowire) contextAutowire.getBean("student");
+
+        System.out.println(student);
+
     }
 }

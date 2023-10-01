@@ -28,10 +28,10 @@ public class Product {
     }
 
     public void init() {
-        System.out.println("Initialized Bean product.");
+        System.out.println("Initialized Bean product using XMl.");
     }
     public void destroy() {
-        System.out.println("Destroyed Bean product.");
+        System.out.println("Destroyed Bean product using XML.");
     }
 
     private String name;

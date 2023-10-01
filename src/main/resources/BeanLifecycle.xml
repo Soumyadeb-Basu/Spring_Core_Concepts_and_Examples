@@ -5,9 +5,21 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
 
+    <context:annotation-config/>
+
     <bean class="com.soumya.beanLifecycle.Product" name="product1" init-method="init" destroy-method="destroy">
         <property name="price" value="250"/>
         <property name="name" value="Health Drink" />
+    </bean>
+
+    <bean class="com.soumya.beanLifecycle.Laptop" name="laptop">
+        <property name="id" value="45"/>
+        <property name="model" value="lenovo Ideapad" />
+    </bean>
+
+    <bean class="com.soumya.beanLifecycle.Mobile" name="mobile">
+        <constructor-arg value="234124" type="long"/>
+        <constructor-arg value="Nokia 2341" type="String"/>
     </bean>
 
 </beans>

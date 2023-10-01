@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <context:annotation-config/>
+
+    <bean class="com.soumya.autowiring.Engine" name="engine">
+        <property name="id" value="3421"/>
+        <property name="modelNo" value="TR65"/>
+    </bean>
+
+    <bean class="com.soumya.autowiring.License" name="license">
+        <property name="licenseId" value="8761"/>
+    </bean>
+<!-- By Name- Will match the exact object name and bean Name-->
+    <bean class="com.soumya.autowiring.Car" name="car" autowire="byName">
+        <property name="id" value="4356"/>
+    </bean>
+    <!-- By Type- Will match the type/class of the object/bean-->
+    <bean class="com.soumya.autowiring.Car" name="car2" autowire="byType">
+        <property name="id" value="9841"/>
+    </bean>
+
+    <bean class="com.soumya.autowiring.StudentAutowire" name="student">
+        <property name="rollNo" value="34"/>
+    </bean>
+
+    <bean class="com.soumya.autowiring.Marks" name="marks">
+        <property name="marks" value="89"/>
+    </bean>
+
+    <bean class="com.soumya.autowiring.Grade" name="grade">
+        <property name="grade" value="B"/>
+    </bean>
+
+</beans>
