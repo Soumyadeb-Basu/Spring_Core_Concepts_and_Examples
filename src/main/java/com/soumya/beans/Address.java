@@ -20,6 +20,11 @@ public class Address {
     public Address() {
     }
 
+    public String returnAddress() {
+        return "New Address...";
+    }
+
+
     private String name;
 
 

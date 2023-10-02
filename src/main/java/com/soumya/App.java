@@ -5,11 +5,10 @@ import com.soumya.autowiring.StudentAutowire;
 import com.soumya.beanLifecycle.Laptop;
 import com.soumya.beanLifecycle.Mobile;
 import com.soumya.beanLifecycle.Product;
-import com.soumya.beans.Employee;
-import com.soumya.beans.Person;
-import com.soumya.beans.Student;
-import com.soumya.beans.TestRef;
+import com.soumya.beans.*;
+import com.soumya.config.JavaConfig;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -100,5 +99,24 @@ public class App
 
         System.out.println(student);
 
+        System.out.println("-------");
+        ApplicationContext contextStereotype= new ClassPathXmlApplicationContext("StereotypeConfig.xml");
+
+        College college = (College) contextStereotype.getBean("college");
+
+        System.out.println(college);
+
+        College college2 = (College) contextStereotype.getBean("college");
+
+        System.out.println(college.hashCode());  //As Prototype scope is available, both objects hashcode should be different
+        System.out.println(college2.hashCode()); //If singleton scope was followed, only one object is created and used everywhere
+
+        ApplicationContext configContext = new AnnotationConfigApplicationContext(JavaConfig.class);
+        Address address= (Address) configContext.getBean("getAddress");
+        System.out.println("-------");
+        System.out.println(address);
+        Person person= (Person) configContext.getBean("getPerson");
+        System.out.println("-------");
+        System.out.println(person);
     }
 }
